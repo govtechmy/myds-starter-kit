@@ -14,33 +14,35 @@ function App() {
       <MastHeadMYDS />
       <NavbarMYDS />
       <Hero
-        title="Selamat Datang Ke PortalMY"
-        background={<HeroLight className="w-full h-full object-cover" />}
-        search={<SearchBarMyds />}
-        links={
-          <div className="flex flex-col gap-3 w-full">
-            <div className="text-body-sm text-txt-black-500 justify-center flex">
-              Pautan Popular:
+            title="Selamat Datang Ke PortalMY"
+            background={<HeroLight className="w-full h-full object-cover"/>}
+            search={<SearchBarMyds />}
+            links={
+            <div className="flex flex-col gap-3 w-full">
+                <div className="text-body-sm font-body font-normal text-txt-black-700 justify-center flex">
+                  Pautan Popular:
+                </div>
+                <div className="flex flex-row flex-wrap gap-[6px] justify-center">
+                {pautanPopular.map((item, index) => (
+                    <Button
+                        key={index}
+                        variant="default-outline"
+                        className="rounded-full text-xs text-txt-black-900"
+                        size="medium"
+                        onClick={() => window.open(item.link, '_blank')}
+                    >
+                        <div className="rounded-full bg-primary-50 text-txt-primary size-8 items-center justify-center flex">
+                            {item.icon}
+                        </div>
+                        <div className="text-txt-black-700 font-body font-medium text-xs max-w-[150px] truncate">
+                            {item.name}
+                        </div>
+                    </Button>
+                ))}
+                </div>
             </div>
-            <div className="flex flex-row flex-wrap gap-[6px] justify-center">
-              {pautanPopular.map((item, index) => (
-                <Button
-                  key={index}
-                  variant="default-outline"
-                  className="rounded-full text-xs text-txt-black-900"
-                  size="medium"
-                  onClick={() => window.open(item.link, "_blank")}
-                >
-                  <div className="rounded-full bg-primary-50 text-txt-primary size-8 items-center justify-center flex">
-                    {item.icon}
-                  </div>
-                  <div className="max-w-[150px] truncate">{item.name}</div>
-                </Button>
-              ))}
-            </div>
-          </div>
-        }
-      ></Hero>
+            }
+        ></Hero>
       <BodyApp>
         <SiaranMYDS  dataItemSiaran={siaran}/>
       </BodyApp>

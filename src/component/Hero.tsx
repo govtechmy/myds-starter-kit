@@ -11,10 +11,10 @@ export default function Hero({
 }) {
   return (
     <section className="relative border-b border-outline-200 min-h-[500px] flex flex-col">
-      <div className="absolute inset-0 -z-10 w-full h-full">
+      <div className="absolute inset-0 -z-10 w-full h-full justify-center flex">
         {background}
       </div>
-      <div className="flex-1 w-full py-16 flex flex-col justify-center">
+      <div className="flex-1 w-full px-6 py-16 flex flex-col justify-center">
         <div className="flex flex-col gap-6">
           <h1 className="text-txt-black-900 font-heading font-semibold text-heading-md text-center mb-3">
             {title}
