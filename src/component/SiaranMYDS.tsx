@@ -78,6 +78,10 @@ export default function SiaranMYDS({
 
   const currentItem = data[current];
 
+  if (!data || data.length === 0) {
+    return <div className="w-full py-12 lg:py-16">No data available</div>;
+  }
+
   return (
     <div className="w-full py-12 lg:py-16">
       <div className="space-y-6">
@@ -85,13 +89,13 @@ export default function SiaranMYDS({
           <div className="flex flex-col justify-between lg:w-1/3">
             <div className="space-y-3 sm:space-y-6">
               <h2 className="text-2xl font-bold text-gray-900 lg:text-3xl">
-                {currentItem.title}
+                {currentItem?.title}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                {currentItem.information}
+                {currentItem?.information}
               </p>
             </div> 
-            <Link href={currentItem.url} target="_blank" rel="noopener noreferrer" className="pt-10">
+            <Link href={currentItem?.url || "#"} target="_blank" rel="noopener noreferrer" className="pt-10">
               Ketahui lebih lanjut
             </Link>
           </div>
@@ -106,8 +110,8 @@ export default function SiaranMYDS({
                   <div key={item.id} className="w-full flex-shrink-0">
                     <div className="relative">
                       <img
-                        src={item.image}
-                        alt={item.title}
+                        src={item?.image}
+                        alt={item?.title || "Image"}
                         className="w-full object-cover sm:h-[450px]"
                       />
                     </div>
