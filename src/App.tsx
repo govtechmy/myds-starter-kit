@@ -7,15 +7,50 @@ import HeroLight from "./assets/heroLight";
 import Hero from "./component/Hero";
 import SearchBarMyds from "./component/SearchBarMyds";
 import SiaranMYDS from "./component/SiaranMYDS";
+import HeroDark from "./assets/heroDark";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Function to check if dark mode is active
+    const checkDarkMode = () => {
+      const htmlElement = document.documentElement;
+      const hasDarkClass = htmlElement.classList.contains('dark');
+      setIsDarkMode(hasDarkClass);
+    };
+
+    // Check initially
+    checkDarkMode();
+
+    // Create observer to watch for class changes on html element
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          checkDarkMode();
+        }
+      });
+    });
+
+    // Start observing
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    // Cleanup observer on unmount
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="">
       <MastHeadMYDS />
       <NavbarMYDS />
       <Hero
             title="Selamat Datang Ke PortalMY"
-            background={<HeroLight className="w-full h-full object-cover"/>}
+            // background={<HeroLight className="w-full h-full object-cover"/>}
+            background={isDarkMode ? <HeroDark /> : <HeroLight />}
             search={<SearchBarMyds />}
             links={
             <div className="flex flex-col gap-3 w-full">
