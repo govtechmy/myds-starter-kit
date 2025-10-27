@@ -122,6 +122,7 @@ export const siaran = [
 
 export const kalendar = [
     {
+      id: 1,
       day: "SABTU",
       date: "15 FEB",
       title: "Hari Kanak-Kanak Sedunia",
@@ -129,6 +130,7 @@ export const kalendar = [
       imageAlt: "xxx",
     },
     {
+      id: 2,
       day: "ISNIN",
       date: "11 MAC",
       title: "Hari Sukan Malaysia 2025",
@@ -136,6 +138,7 @@ export const kalendar = [
       imageAlt: "xxx",
     },
     {
+      id: 3,
       day: "JUMAAT",
       date: "16 MEI",
       title: "Hari Guru Malaysia 2025",
@@ -143,6 +146,7 @@ export const kalendar = [
       imageAlt: "xxx",
     },
     {
+      id: 4,
       day: "ISNIN",
       date: "11 MAC",
       title: "Hari Bapa Malaysia 2025",
@@ -150,24 +154,19 @@ export const kalendar = [
       imageAlt: "xxx",
     },
     {
-      day: "ISNIN",
-      date: "11 MAC",
-      title: "Hari Sukan Malaysia 2025",
-      imageSrc: "/homepage/kalendar2.jpg",
+      id: 5,
+      day: "SELASA",
+      date: "16 OKTOBER",
+      title: "Peperiksaan SPM Tahun 2025",
+      imageSrc: "/homepage/kalendar5.jpg",
       imageAlt: "xxx",
     },
     {
-      day: "JUMAAT",
-      date: "16 MEI",
-      title: "Hari Guru Malaysia 2025",
-      imageSrc: "/homepage/kalendar3.jpg",
-      imageAlt: "xxx",
-    },
-    {
-      day: "ISNIN",
-      date: "11 MAC",
-      title: "Hari Bapa Malaysia 2025",
-      imageSrc: "/homepage/kalendar4.jpg",
+      id: 6,
+      day: "RABU",
+      date: "17 NOVEMBER",
+      title: "Peperiksaan Akhir Tahun 2025",
+      imageSrc: "/homepage/kalendar6.jpg",
       imageAlt: "xxx",
     },
   ];
