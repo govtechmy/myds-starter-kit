@@ -5,6 +5,29 @@ import {
   MegaphoneIcon,
 } from "@govtechmy/myds-react/icon";
 
+export const NavbarMenuData = [
+  {
+    id: 1,
+    title: "Utama",
+    url: "",
+  },
+  {
+    id: 2,
+    title: "Analitik",
+    url: "",
+  },
+  {
+    id: 3,
+    title: "Siaran",
+    url: "",
+  },
+  {
+    id: 4,
+    title: "Acara",
+    url: "",
+  },
+];
+
 export const dataItemLinks = [
     {
       icon: <JataNegaraIcon />,
