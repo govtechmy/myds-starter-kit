@@ -3,8 +3,9 @@ import MastHeadMYDS from "./component/MastHeadMYDS";
 import NavbarMYDS from "./component/NavbarMYDS";
 import FooterMYDS from "./component/FooterMYDS";
 import SectionHeader from "./component/SectionHeader";
-import { kalendar, pautanPopular, dataItemLinks } from "./contentData";
+import { kalendar, dataItemLinks, siaran } from "./contentData";
 import SectionItemLinksMYDS from "./component/SectionItemLinksMYDS";
+import SiaranMYDS from "./component/SiaranMYDS";
 
 function App() {
   return (
@@ -13,7 +14,13 @@ function App() {
       <NavbarMYDS />
       <BodyApp>
         <SectionHeader
-          header="Siaran"
+          header="SIARAN"
+          children={
+            <SiaranMYDS dataItemSiaran={siaran}/>
+          }
+        />
+        <SectionHeader
+          header="KALENDAR"
           children={
             <CarouselMYDS dataItemCalendar={kalendar} mainTitle={"Majlis yang bakal disambut tahun ini"} />
           }
