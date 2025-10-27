@@ -1,4 +1,8 @@
-export default function HeroLight() {
+interface HeroLightProps {
+  className?: string;
+}
+
+export default function HeroLight({ className }: HeroLightProps) {
   return (
     <svg
       width="1440"
@@ -6,6 +10,7 @@ export default function HeroLight() {
       viewBox="0 0 1440 514"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <mask
         id="mask0_24_6253"
