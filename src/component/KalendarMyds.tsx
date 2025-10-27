@@ -23,17 +23,19 @@ export default function KalendarMyds({
   title,
 }: KalendarProps) {
   return (
-    <div className="w-full flex flex-col">
-      <div className="text-txt-primary font-body font-semibold text-sm tracking-[2.8px] pb-4">
-        {header}
-      </div>
-      <div className="flex justify-between items-center max-sm:flex-col max-sm:gap-2">
-        <div className="text-txt-black-900 font-heading font-semibold text-heading-sm">
-          {title}
+    <div className="w-full flex flex-col py-16">
+      <div className="flex flex-col gap-4">
+        <div className="text-txt-primary font-body font-semibold text-sm tracking-[2.8px]">
+          {header}
         </div>
-        <Button variant="default-outline">
-          Semua Acara <ArrowForwardIcon />
-        </Button>
+        <div className="flex justify-between items-center max-sm:flex-col max-sm:gap-2">
+          <div className="text-txt-black-900 font-heading font-semibold text-heading-sm">
+            {title}
+          </div>
+          <Button variant="default-outline">
+            Semua Acara <ArrowForwardIcon />
+          </Button>
+        </div>
       </div>
       <HorizontalCard totalPages={kalendar.length}>
         {kalendar.map((item) => (

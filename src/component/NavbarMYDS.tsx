@@ -15,7 +15,7 @@ export default function NavbarMyds() {
   return (
     <Navbar>
       <NavbarLogo src={""} alt={""}>
-        <JataNegaraIcon />{" "}
+        <JataNegaraIcon />
         <span className="text-txt-black-900 font-semibold font-heading text-body-lg">PortalMY</span>
       </NavbarLogo>
       <NavbarMenu>
