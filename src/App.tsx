@@ -1,16 +1,17 @@
 import MastHeadMYDS from "./component/MastHeadMYDS";
 import NavbarMYDS from "./component/NavbarMYDS";
 import FooterMYDS from "./component/FooterMYDS";
-import { pautanPopular, siaran } from "./contentData";
+import { kalendar, pautanPopular, siaran } from "./contentData";
 import { Button } from "@govtechmy/myds-react/button";
 import HeroLight from "./assets/heroLight";
 import Hero from "./component/Hero";
 import SearchBarMyds from "./component/SearchBarMyds";
 import SiaranMYDS from "./component/SiaranMYDS";
+import KalendarMyds from "./component/KalendarMyds";
 import HeroDark from "./assets/heroDark";
 import { useState, useEffect } from "react";
 
-function App() {
+export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -79,7 +80,8 @@ function App() {
             }
         ></Hero>
       <BodyApp>
-        <SiaranMYDS  dataItemSiaran={siaran}/>
+       <SiaranMYDS  dataItemSiaran={siaran}/>
+       <KalendarMyds kalendar={kalendar} title="Majlis yang bakal disambut tahun ini" header="KALENDAR"/>
       </BodyApp>
 
       <FooterMYDS />
@@ -87,14 +89,12 @@ function App() {
   );
 }
 
-export default App;
 
-// // body design
-// // uncomment below to use body design
 function BodyApp({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto flex-1 px-[18px] sm:px-[18px] md:px-[24px] lg:px-[24px] xl:px-[24px] max-w-[1328px] p-8 flex w-full overflow-visible">
+    <div className="mx-auto flex-1 px-[18px] sm:px-[18px] md:px-[24px] lg:px-[24px] xl:px-[24px] max-w-[1328px] p-8 flex w-full overflow-visible bg-bg-white">
       <div className="w-full overflow-visible">{children}</div>
     </div>
   );
 }
+
