@@ -153,22 +153,22 @@ export default function SiaranMYDS({
               <Button
                 variant="default-outline"
                 size="medium"
-                className="h-10 w-10 rounded-full"
+                className="h-10 w-10 rounded-full text-txt-black-700"
                 onClick={goToPrevious}
                 disabled={current === 0}
                 aria-label="Previous slide"
               >
-                <ArrowBackIcon className="w-4 h-4 text-txt-black-700" />
+                <ArrowBackIcon className="w-4 h-4 " />
               </Button>
               <Button
                 variant="default-outline"
                 size="medium"
-                className="h-10 w-10 rounded-full"
+                className="h-10 w-10 rounded-full text-txt-black-700"
                 onClick={goToNext}
                 disabled={current === data.length - 1}
                 aria-label="Next slide"
               >
-                <ArrowForwardIcon className="w-4 h-4 text-txt-black-700" />
+                <ArrowForwardIcon className="w-4 h-4 " />
               </Button>
             </div>
 
