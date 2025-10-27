@@ -34,7 +34,7 @@ function App() {
                         <div className="rounded-full bg-primary-50 text-txt-primary size-8 items-center justify-center flex">
                             {item.icon}
                         </div>
-                        <div className="text-txt-black-700 font-body font-medium text-xs max-w-[150px] truncate">
+                        <div className="text-left text-txt-black-700 font-body font-medium text-xs leading-snug line-clamp-2 max-w-[150px] break-words">
                             {item.name}
                         </div>
                     </Button>
