@@ -24,19 +24,19 @@ export default function HorizontalCard({
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => {
-      const newIndex = Math.max(prev - 1, 0);
+    if (activeIndex > 0) {
+      const newIndex = activeIndex - 1;
       scrollToIndex(newIndex);
-      return newIndex;
-    });
+      setActiveIndex(newIndex);
+    }
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => {
-      const newIndex = Math.min(prev + 1, totalPages - 1);
+    if (activeIndex < totalPages - 1) {
+      const newIndex = activeIndex + 1;
       scrollToIndex(newIndex);
-      return newIndex;
-    });
+      setActiveIndex(newIndex);
+    }
   };
 
   return (
@@ -67,12 +67,22 @@ export default function HorizontalCard({
 
         {/*  Arrow Buttons */}
         <div className="flex gap-2 pl-2 ">
-          <Button variant="default-outline" className="p-2" onClick={handlePrev}>
+          <Button 
+            variant="default-outline" 
+            className="p-2 disabled:opacity-50 disabled:cursor-not-allowed" 
+            onClick={handlePrev}
+            disabled={activeIndex === 0}
+          >
             <ButtonIcon>
               <ArrowBackIcon className="size-5" />
             </ButtonIcon>
           </Button>
-          <Button variant="default-outline" className="p-2" onClick={handleNext}>
+          <Button 
+            variant="default-outline" 
+            className="p-2 disabled:opacity-50 disabled:cursor-not-allowed" 
+            onClick={handleNext}
+            disabled={activeIndex === totalPages - 1}
+          >
             <ButtonIcon>
               <ArrowForwardIcon className="size-5" />
             </ButtonIcon>
