@@ -11,15 +11,13 @@ type CalendarItem = {
 
 type SectionItemCalendarProps = {
   dataItemCalendar: CalendarItem[];
-  mainTitle: string;
 };
 export default function CarouselMYDS({
   dataItemCalendar,
-  mainTitle,
 }: SectionItemCalendarProps) {
   return (
     <div className="w-full">
-      <HorizontalCard mainTitle={mainTitle}>
+      <HorizontalCard>
         {dataItemCalendar.map((item, index) => (
           <div
             key={index}
