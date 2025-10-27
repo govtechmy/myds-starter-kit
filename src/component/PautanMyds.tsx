@@ -20,7 +20,7 @@ export default function PautanMyds({
   title,
 }: PautanMydsProps) {
   return (
-    <div className="flex flex-col gap-12 py-16">
+    <div className="flex flex-col gap-12 py-16 border-t border-otl-gray-200">
       <div className="gap-4 flex flex-col">
         <div className="text-txt-primary font-body font-semibold text-sm tracking-[2.8px] pb-4">
           {header}

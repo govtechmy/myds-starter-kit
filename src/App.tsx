@@ -9,47 +9,15 @@ import SearchBarMyds from "./component/SearchBarMyds";
 import SiaranMYDS from "./component/SiaranMYDS";
 import KalendarMyds from "./component/KalendarMyds";
 import HeroDark from "./assets/heroDark";
-import { useState, useEffect } from "react";
 import PautanMyds from "./component/PautanMyds";
+import { useTheme } from "@govtechmy/myds-react/hooks";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Function to check if dark mode is active
-    const checkDarkMode = () => {
-      const htmlElement = document.documentElement;
-      const hasDarkClass = htmlElement.classList.contains("dark");
-      setIsDarkMode(hasDarkClass);
-    };
-
-    // Check initially
-    checkDarkMode();
-
-    // Create observer to watch for class changes on html element
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
-        ) {
-          checkDarkMode();
-        }
-      });
-    });
-
-    // Start observing
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    // Cleanup observer on unmount
-    return () => observer.disconnect();
-  }, []);
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
 
   return (
-    <div className="">
+    <div>
       <MastHeadMYDS />
       <NavbarMYDS />
       <Hero

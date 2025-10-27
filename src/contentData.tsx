@@ -9,22 +9,22 @@ export const NavbarMenuData = [
   {
     id: 1,
     title: "Utama",
-    url: "",
+    url: "/Utama",
   },
   {
     id: 2,
     title: "Analitik",
-    url: "",
+    url: "/Analitik",
   },
   {
     id: 3,
     title: "Siaran",
-    url: "",
+    url: "/Siaran",
   },
   {
     id: 4,
     title: "Acara",
-    url: "",
+    url: "/Acara",
   },
 ];
 

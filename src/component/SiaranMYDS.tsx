@@ -1,5 +1,9 @@
 import { Button } from "@govtechmy/myds-react/button";
-import { ArrowBackIcon, ArrowForwardIcon, ArrowOutgoingIcon } from "@govtechmy/myds-react/icon";
+import {
+  ArrowBackIcon,
+  ArrowForwardIcon,
+  ArrowOutgoingIcon,
+} from "@govtechmy/myds-react/icon";
 import { useEffect, useState, useCallback } from "react";
 
 type SiaranMYDSData = {
@@ -94,7 +98,7 @@ export default function SiaranMYDS({
     <div className="w-full py-12 lg:py-16">
       <div className="space-y-6">
         <div className="flex flex-col-reverse gap-8 lg:flex-row lg:gap-12">
-          <div className="flex flex-col justify-between lg:w-1/3 py-[56px]">
+          <div className="flex flex-col justify-between lg:w-1/3 lg:py-[56px]">
             <div className="gap-[18px] flex flex-col">
               <div className="text-txt-primary font-body font-semibold text-sm tracking-[2.8px]">
                 {header}
@@ -106,7 +110,16 @@ export default function SiaranMYDS({
                 {currentItem?.information}
               </p>
             </div>
-            <Button variant="primary-fill" size="medium" className="rounded-full" onClick={() => window.open("https://www.google.com", "_blank")}>   Ketahui lebih lanjut <ArrowOutgoingIcon /></Button>
+            <div className="mt-3">
+              <Button
+                variant="primary-fill"
+                size="medium"
+                className="rounded-full"
+                onClick={() => window.open("https://www.google.com", "_blank")}
+              >
+                Ketahui lebih lanjut <ArrowOutgoingIcon />
+              </Button>
+            </div>
           </div>
 
           <div className="lg:w-2/3 relative">
@@ -116,7 +129,10 @@ export default function SiaranMYDS({
                 style={{ transform: `translateX(-${current * 100}%)` }}
               >
                 {data.map((item) => (
-                  <div key={item.id} className="w-full flex-shrink-0 border border-otl-gray-200 overflow-hidden rounded-2xl">
+                  <div
+                    key={item.id}
+                    className="w-full flex-shrink-0 border border-otl-gray-200 overflow-hidden rounded-2xl"
+                  >
                     <div className="relative">
                       <img
                         src={item?.image}
@@ -133,11 +149,11 @@ export default function SiaranMYDS({
 
         {data.length > 1 && (
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:justify-between px-4">
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               <Button
-                variant="primary-outline"
+                variant="default-outline"
                 size="medium"
-                className="h-10 w-10 rounded-full border border-gray-300 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 w-10 rounded-full"
                 onClick={goToPrevious}
                 disabled={current === 0}
                 aria-label="Previous slide"
@@ -145,9 +161,9 @@ export default function SiaranMYDS({
                 <ArrowBackIcon className="w-4 h-4 text-txt-black-700" />
               </Button>
               <Button
-                variant="primary-outline"
+                variant="default-outline"
                 size="medium"
-                className="h-10 w-10 rounded-full border border-gray-300 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 w-10 rounded-full"
                 onClick={goToNext}
                 disabled={current === data.length - 1}
                 aria-label="Next slide"

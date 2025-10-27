@@ -9,27 +9,44 @@ import { ThemeSwitch } from "@govtechmy/myds-react/theme-switch";
 import { GlobeIcon, JataNegaraIcon } from "@govtechmy/myds-react/icon";
 import { NavbarMenuData } from "../contentData";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@govtechmy/myds-react/select";
-import { ThemeProvider } from "@govtechmy/myds-react/hooks";
 
 export default function NavbarMyds() {
   return (
     <Navbar>
-      <NavbarLogo src={""} alt={""}>
+      <NavbarLogo 
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+        alt="PortalMY Logo" 
+        className="[&>img]:hidden"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          // Navigate to home page without refresh
+          window.history.pushState(null, '', '/');
+          document.title = 'PortalMY';
+        }}
+      >
         <JataNegaraIcon />
         <span className="text-txt-black-900 font-semibold font-heading text-body-lg">PortalMY</span>
       </NavbarLogo>
       <NavbarMenu>
         {NavbarMenuData.map((item) => (
-          <NavbarMenuItem key={item.id} href={item.url}>
+          <NavbarMenuItem 
+            key={item.id} 
+            href={item.url}
+            onClick={(e) => {
+              e.preventDefault();
+              // Handle SPA navigation here
+              window.history.pushState(null, '', item.url);
+              document.title = item.title;
+            }}
+          >
             {item.title}
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
       <NavbarAction>
         {/* Theme Switch */}
-        <ThemeProvider>
-          <ThemeSwitch as="toggle" />
-        </ThemeProvider>
+        <ThemeSwitch as="toggle" />
         
         {/* Select Language Toggle  : mobile hide if needed  */}
         <div className="hidden sm:block">

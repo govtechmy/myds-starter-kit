@@ -10,7 +10,7 @@ export default function Hero({
   background?: React.ReactNode;
 }) {
   return (
-    <section className="relative border-b border-outline-200 min-h-[500px] flex flex-col">
+    <section className="relative border-b border-otl-gray-200 min-h-[500px] flex flex-col">
       <div className="absolute inset-0 -z-10 w-full h-full justify-center flex">
         {background}
       </div>
