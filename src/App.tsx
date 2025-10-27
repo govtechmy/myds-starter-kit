@@ -1,11 +1,12 @@
 import MastHeadMYDS from "./component/MastHeadMYDS";
 import NavbarMYDS from "./component/NavbarMYDS";
 import FooterMYDS from "./component/FooterMYDS";
-import { pautanPopular } from "./contentData";
+import { pautanPopular, siaran } from "./contentData";
 import { Button } from "@govtechmy/myds-react/button";
 import HeroLight from "./assets/heroLight";
 import Hero from "./component/Hero";
 import SearchBarMyds from "./component/SearchBarMyds";
+import SiaranMYDS from "./component/SiaranMYDS";
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
         }
       ></Hero>
       <BodyApp>
-        hehe
+        <SiaranMYDS  dataItemSiaran={siaran}/>
       </BodyApp>
 
       <FooterMYDS />
