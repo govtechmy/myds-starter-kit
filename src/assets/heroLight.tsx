@@ -5,12 +5,13 @@ interface HeroLightProps {
 export default function HeroLight({ className }: HeroLightProps) {
   return (
     <svg
-      width="1440"
-      height="514"
+      width="100%"
+      height="100%"
       viewBox="0 0 1440 514"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      preserveAspectRatio="xMinYMid slice"
     >
       <mask
         id="mask0_24_6253"
