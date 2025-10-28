@@ -1,4 +1,3 @@
-// This component will be reworked and integrated into the MYDS component library soon.
 import { Button, ButtonIcon } from "@govtechmy/myds-react/button";
 import { ArrowBackIcon, ArrowForwardIcon } from "@govtechmy/myds-react/icon";
 import { Tag } from "@govtechmy/myds-react/tag";
@@ -273,3 +272,87 @@ HorizontalCard.Dots = HorizontalCardDots;
 HorizontalCard.Item = HorizontalCardItem;
 
 export default HorizontalCard;
+
+// This component will be reworked and integrated into the MYDS component library soon.
+/* 
+USAGE EXAMPLES:
+
+// Basic HorizontalCard with Items
+<HorizontalCard>
+  <HorizontalCard.Header>
+    <HorizontalCard.Title>My Title</HorizontalCard.Title>
+    <HorizontalCard.Controls>
+      <HorizontalCard.ArrowButton direction="left" />
+      <HorizontalCard.ArrowButton direction="right" />
+    </HorizontalCard.Controls>
+  </HorizontalCard.Header>
+  
+  <HorizontalCard.Content>
+    {items.map((item) => (
+      <HorizontalCard.Item key={item.id} item={item} />
+    ))}
+  </HorizontalCard.Content>
+  
+  <HorizontalCard.Footer>
+    <HorizontalCard.Dots />
+  </HorizontalCard.Footer>
+</HorizontalCard>
+
+// Complete Example (like in KalendarMyds.tsx)
+<HorizontalCard>
+  <HorizontalCard.Header>
+    <HorizontalCard.Title>{header}</HorizontalCard.Title>
+    <HorizontalCard.Controls>
+      <HorizontalCard.ArrowButton direction="left" />
+      <HorizontalCard.ArrowButton direction="right" />
+    </HorizontalCard.Controls>
+  </HorizontalCard.Header>
+  
+  <HorizontalCard.Content>
+    {kalendar.map((item) => (
+      <HorizontalCard.Item key={item.id} item={item} />
+    ))}
+  </HorizontalCard.Content>
+  
+  <HorizontalCard.Footer>
+    <HorizontalCard.Dots />
+  </HorizontalCard.Footer>
+</HorizontalCard>
+
+// Data structure for HorizontalCard.Item:
+const itemData = {
+  id: 1,
+  imageSrc: "/path/to/image.jpg",
+  imageAlt: "Image description",
+  day: "Jumaat",
+  date: "31 Jan",
+  title: "Event Title"
+};
+
+// Custom Item with own content
+<HorizontalCard.Item item={itemData}>
+  <div className="custom-content">
+    <h3>Custom Title</h3>
+    <p>Custom description</p>
+  </div>
+</HorizontalCard.Item>
+
+// Without Footer (no dots)
+<HorizontalCard>
+  <HorizontalCard.Header>
+    <HorizontalCard.Title>Title Only</HorizontalCard.Title>
+  </HorizontalCard.Header>
+  <HorizontalCard.Content>
+    {items.map((item) => <HorizontalCard.Item key={item.id} item={item} />)}
+  </HorizontalCard.Content>
+</HorizontalCard>
+
+// Custom styling
+<HorizontalCard>
+  <HorizontalCard.Title className="text-blue-600">Custom Color Title</HorizontalCard.Title>
+  <HorizontalCard.Item item={itemData} className="hover:shadow-lg" />
+</HorizontalCard>
+*/
+
+// This component will be reworked and integrated into the MYDS component library soon.
+

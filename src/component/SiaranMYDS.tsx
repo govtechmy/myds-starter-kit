@@ -398,3 +398,90 @@ export default function SiaranMYDS({
 
 // Export the compound component as well
 export { Siaran };
+
+/*
+USAGE EXAMPLES:
+
+1. Basic Siaran with data:
+   <Siaran dataItemSiaran={siaranData}>
+     <Siaran.Content>
+       <Siaran.Info>
+         <Siaran.Header>SIARAN</Siaran.Header>
+         <Siaran.Title />
+         <Siaran.Description />
+         <Siaran.Action />
+       </Siaran.Info>
+       <Siaran.Carousel>
+         {siaranData.map((item) => (
+           <Siaran.CarouselItem key={item.id} item={item} />
+         ))}
+       </Siaran.Carousel>
+     </Siaran.Content>
+     <Siaran.Controls />
+   </Siaran>
+
+2. Legacy component usage (backward compatibility):
+   <SiaranMYDS 
+     dataItemSiaran={siaranData}
+     header="SIARAN"
+   />
+
+3. Custom content with overrides:
+   <Siaran dataItemSiaran={siaranData}>
+     <Siaran.Content>
+       <Siaran.Info>
+         <Siaran.Header className="text-blue-600">CUSTOM HEADER</Siaran.Header>
+         <Siaran.Title>Custom Title Override</Siaran.Title>
+         <Siaran.Description>Custom description text</Siaran.Description>
+         <Siaran.Action href="https://custom-url.com">Custom Action</Siaran.Action>
+       </Siaran.Info>
+       <Siaran.Carousel>
+         {siaranData.map((item) => (
+           <Siaran.CarouselItem key={item.id} item={item}>
+             <img src={item.image} alt={item.title} className="w-full h-[300px] object-cover" />
+           </Siaran.CarouselItem>
+         ))}
+       </Siaran.Carousel>
+     </Siaran.Content>
+     <Siaran.Controls className="px-8" />
+   </Siaran>
+
+4. Data structure for SiaranMYDSData:
+   const siaranData = [
+     {
+       id: 1,
+       category: "News",
+       title: "Important Announcement",
+       date: "2024-01-15",
+       image: "/path/to/image.jpg",
+       url: "https://example.com/news/1",
+       information: "Detailed information about the announcement..."
+     }
+   ];
+
+5. Using JSON data instead of array:
+   <Siaran jsonData='[{"id":1,"title":"Test","image":"/test.jpg",...}]'>
+     <Siaran.Content>
+       <Siaran.Info>
+         <Siaran.Header>JSON DATA</Siaran.Header>
+         <Siaran.Title />
+         <Siaran.Description />
+         <Siaran.Action />
+       </Siaran.Info>
+       <Siaran.Carousel>
+         // Children managed automatically by context
+       </Siaran.Carousel>
+     </Siaran.Content>
+     <Siaran.Controls />
+   </Siaran>
+
+FEATURES:
+- Keyboard navigation (Arrow keys)
+- Auto-disable navigation at boundaries  
+- Smooth transitions with loading states
+- Context-based data sharing between components
+- Supports both data array and JSON string input
+- Custom content override capabilities
+- Responsive design (mobile/desktop layouts)
+- Automatic slide management and transitions
+*/

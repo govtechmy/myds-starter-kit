@@ -2,8 +2,6 @@
 import { Button } from "@govtechmy/myds-react/button";
 import { ArrowForwardIcon } from "@govtechmy/myds-react/icon";
 
-
-
 interface KalendarProps {
   header?: string;
   title?: string;

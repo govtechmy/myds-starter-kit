@@ -1,5 +1,3 @@
-// This component will be reworked and integrated into the MYDS component library soon.
-
 import React from 'react';
 import { Button } from "@govtechmy/myds-react/button";
 
@@ -166,3 +164,53 @@ Hero.LinksContainer = HeroLinksContainer;
 Hero.LinkItem = HeroLinkItem;
 
 export default Hero;
+
+// This component will be reworked and integrated into the MYDS component library soon.
+/* 
+USAGE EXAMPLES:
+
+// Basic Hero with Background and Title
+<Hero>
+  <Hero.Background>
+    <img src="/hero-bg.jpg" alt="Background" className="w-full h-full object-cover" />
+  </Hero.Background>
+  <Hero.Content>
+    <Hero.Title>Welcome to PortalMY</Hero.Title>
+  </Hero.Content>
+</Hero>
+
+// Complete Hero Section (like in App.tsx)
+<Hero>
+  <Hero.Background>
+    {isDarkMode ? <HeroDark /> : <HeroLight />}
+  </Hero.Background>
+  <Hero.Content>
+    <Hero.Title>Selamat Datang Ke PortalMY</Hero.Title>
+    <Hero.Search>
+      <SearchBarMyds />
+    </Hero.Search>
+    <Hero.Links>
+      <Hero.LinksHeader>Pautan Popular:</Hero.LinksHeader>
+      <Hero.LinksContainer>
+        {pautanPopular.map((item, index) => (
+          <Hero.LinkItem key={index} item={item} />
+        ))}
+      </Hero.LinksContainer>
+    </Hero.Links>
+  </Hero.Content>
+</Hero>
+
+// Data structure for Hero.LinkItem:
+const linkData = {
+  name: "Service Name",
+  link: "https://example.com",
+  icon: <IconComponent />
+};
+
+// Custom styling examples:
+<Hero className="custom-hero-class">
+  <Hero.Title className="text-blue-600">Custom Title</Hero.Title>
+  <Hero.LinkItem item={linkData} className="hover:bg-primary-100" />
+</Hero>
+*/
+
